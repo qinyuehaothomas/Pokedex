@@ -15,8 +15,7 @@ Given a csv file, make a porgram to query Pokemon stats based on:
 
 *It's a school project so I can't really share the task file, copyright, you know＼（〇_ｏ）／*
 
-The original task is a Command Line Interface(CLI) programme, but **Who on earth uses a CLI programme ?** (except those VIM/Linux gigachads.)
-
+The original task is a Command Line Interface(CLI) programme, but **Who want to use a CLI programme ?**
 Also, the queries are weird, e.g. (no name query)
 
 ## So Here's the ideas of additional features:
@@ -29,7 +28,7 @@ Also, the queries are weird, e.g. (no name query)
 4. A UI
 5. Export as a packaged software with no dependency issue
 
-...But, I'm a JC student who scored 3/15 for physics, so **It is time-wise impossible, and not meaningful to deliver all the features**\
+...But, I'm a JC student who scored 3/15 for physics, so **It is time-wise impossible to deliver all the features**\
 **If you are keen on turing these into reality, feel free to contribute to this repo.*
 
 # Devlog
@@ -45,3 +44,42 @@ The name in the csv is not the same as the name for image link, so some data fil
 The 25 that still doesnt work is done manually. (by hard-coding their URL)
 
 800 file seems to be a bit fat for Github, so I ignored the folder. **⭐PLEASE run the web scraping file to get the image assets, before you run the programme!**
+
+After Checking the video, heres the better defined problem statement:
+
+>#### Given a csv file, make a porgram to query Pokemon stats based on:
+>- *display the first N row of CSV, with tabs*
+>- *display the first pokemon of type S, full type name, case sensitive*
+>- *display all pokemon with total stat N*
+>- *display all pokemon with Special attack, special defense, and speed all greater or equal to the user's input.*
+>- *input two types, letter for letter, and find legerndary pokemon*\
+>
+>program need to be input-robust\
+>(ironically, the queries are not so robust, a UI can easily avoid these problems...)
+
+After getting interrupted by some other tasks, which took unexpectedly long, I think Ill stop here for tdy.
+
+*Done on 15/3/2025*
+
+## Day 9
+After a looooooooooooooooooooooooooooooooooooooooooooooooooooooooooong while, now NOI had finished and I wanna chill.\
+So lets get back to this! q(≧▽≦q)\
+---
+#### Reorganised UI idea
+It would be both easier & user friendlier to impliment the features in the following manners
+- A "**Filter**" Manual with following
+    - Two "**Type**" option dropdown
+    - A bar for "**Base stat**" with a min and max value
+        - A "**Advanced**" Query option for min. specific stats
+    - A "**Legendary**" switch
+    - A small "**Clear**" button to clear filter
+- A "**Name**" field where user can search for pokemon
+- If you type "Guess My Name" in the name bar, A New window with one round of "Guess my name" pops up
+
+But welp, Im definitely *not* gonna code all these myself. ╮(╯-╰)╭\
+To prevent anyone from accusing me for using AI, I'm gonna make the base version tdy.
+---
+Welp, It's 11pm and I feel like just doing a more advanced version of the Command Line interface and thats it\
+╮（╯＿╰）╭\
+I'll summarise Functionality and user guide in the next Devlog.
+*Done on 24/3/2025*
