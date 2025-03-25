@@ -1,5 +1,12 @@
 # Project Pokedex
-## Task
+# Dependencies
+- Nicegui
+- Pillow
+- requests
+- pywebview
+
+# Devlog
+## Inital Task Analysis
 Given a csv file, make a porgram to query Pokemon stats based on:
 - display selected number of Pokemon with their types and statistics\
 *(In what order?)*
@@ -27,11 +34,12 @@ Also, the queries are weird, e.g. (no name query)
 <img src="./ASSETS/readme_assets/Search%20%20Hint%20Example.png" alt="JOJO REFERENCE!!!" height="200">
 4. A UI
 5. Export as a packaged software with no dependency issue
+6. A feature to load search results gradually (cuz some queries can be giant!)
+currently, I'm just displaying the 20 most relavent results
 
 ...But, I'm a JC student who scored 3/15 for physics, so **It is time-wise impossible to deliver all the features**\
 **If you are keen on turing these into reality, feel free to contribute to this repo.*
 
-# Devlog
 ## Day -8
 Before I open this repo, I alrd implimented a web scraping script to download the pokemon images, and defined the basic Pokemon object.\
 <img src="./ASSETS/readme_assets/Webscrap.png" alt="JOJO REFERENCE!!!" height="200">
@@ -64,6 +72,7 @@ After getting interrupted by some other tasks, which took unexpectedly long, I t
 ## Day 9
 After a looooooooooooooooooooooooooooooooooooooooooooooooooooooooooong while, now NOI had finished and I wanna chill.\
 So lets get back to this! q(≧▽≦q)\
+
 ---
 #### Reorganised UI idea
 It would be both easier & user friendlier to impliment the features in the following manners
@@ -78,8 +87,41 @@ It would be both easier & user friendlier to impliment the features in the follo
 
 But welp, Im definitely *not* gonna code all these myself. ╮(╯-╰)╭\
 To prevent anyone from accusing me for using AI, I'm gonna make the base version tdy.
+
 ---
 Welp, It's 11pm and I feel like just doing a more advanced version of the Command Line interface and thats it\
 ╮（╯＿╰）╭\
 I'll summarise Functionality and user guide in the next Devlog.
 *Done on 24/3/2025*
+
+## Day 10
+After 10s of google search, I found [NiceGUI](https://github.com/zauberzeug/nicegui).\
+It seems easy to use and looks OK, I might want to use it.
+
+---
+I changed my mind XiMing did A UI in 10h Im definitely gonna do it.\
+The "select" function in NiceGUI kinda provide search hint ability, so I'm using it!
+
+---
+#### Issue: ⭐F----- Up decorator, paging n stuffs.
+I kinda trolled the event controller by wrapping a function of a class\
+in a wrapper, and decorating it,\
+avoiding @ui.page not allowing self as variable (I asked AI they seems to have no bright idea around it...)\
+
+---
+Theres a thing called Manual routing... (I spent hours on this s***)\
+`ui.page("/")(SEARCH.build)`\
+doesnt seem to work in Native mode...\
+doesnt seem to work at all....〒▽〒\
+
+---
+So just display search result on the same page?
+is 800 results hard to load? Definitely!...
+
+#### GOOD NEWS! IM ALMOST DONE WITH BASE UI!!!
+Problem: sometime query have gigantic result (800), and it aint loading in a 100 years\
+I can do a **"show more"** button, but I'm just gonna display the 20 most relavent results.\
+ChatGPT came out with a async solution😎, welp its now smooooth!\
+
+## NOW, BASIC UI is DONE🥳🥳🥂🥂🥂
+*Done on 25/3/2025 (its now 00:20am🦉)*
