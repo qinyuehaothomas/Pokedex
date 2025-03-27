@@ -799,3 +799,5 @@ No,Name,Type 1,Type 2,Total,HP,Attack,Defense,Sp. Atk,Sp. Def,Speed,Generation,L
 798,HoopaHoopa Confined,Psychic,Ghost,600,80,110,60,150,130,70,6,TRUE
 799,HoopaHoopa Unbound,Psychic,Dark,680,80,160,60,170,130,80,6,TRUE
 800,Volcanion,Fire,Water,600,80,110,120,130,90,70,6,TRUE
+801,Rick Ashley,Normal,,1,1,1,1,100000000,1,1,-1,TRUE
+802,Eight-Handled Sword Divergent Sila Divine General Mahoraga,Fighting,Dark,800,1000000000,100000000,100000000,100000000,100000000,1000000000,1000,TRUE

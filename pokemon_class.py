@@ -9,10 +9,15 @@
 
 import PIL.Image
 import os.path
+import base64
 from dataclasses import field
 from nicegui import ui,binding
 
+ENCODE=lambda x: base64.b64encode(x.encode("utf-8"))
+
 ANY_TYPE="(Any Type)"
+
+
 @binding.bindable_dataclass
 class Query:
     type_1: str = ANY_TYPE
@@ -20,6 +25,10 @@ class Query:
     Name: str = ""
     is_legendary: bool = False
     base_stat: dict = field(default_factory=lambda:{"min": 10, "max": 900})
+
+@binding.bindable_dataclass
+class GMN_User: # binder for Guess My Name User Input
+    user_input: str = ""
 
 class Pokemon:
     string_print_length=25
@@ -75,11 +84,19 @@ class Pokemon:
             }]
         }
     def masked(self):
+        r, g, b, a = self.get_image().split()
+
+        # Create a new black image with the same alpha channel
+        black_img = PIL.Image.merge("RGBA", (r.point(lambda _: 0), g.point(lambda _: 0), b.point(lambda _: 0), a))
+
+        # Show or save the modified image
+        # black_img.show()
+        return black_img
         pass
     def get_image(self):
         folder=r"ASSETS\\Pokemon Image"
         if self.photo==None:
-            self.photo=PIL.Image.open(os.path.join(folder,self.Name+".png"))
+            self.photo=PIL.Image.open(os.path.join(folder,self.Name+".png")).convert("RGBA")
         return self.photo
         
     def __repr__(self):

@@ -125,3 +125,6 @@ ChatGPT came out with a async solution😎, welp its now smooooth!\
 
 ## NOW, BASIC UI is DONE🥳🥳🥂🥂🥂
 *Done on 25/3/2025 (its now 00:20am🦉)*
+
+## Day 12
+Did the "Guess My Name" pop up window
