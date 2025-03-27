@@ -1,28 +1,29 @@
 # Project Pokedex
-## Dependencies
-- Nicegui
-- Pillow
-- requests
-- pywebview
-
+Its a school project for H2 computing, non-graded😁
 ## Features
 
 <img src="./ASSETS/readme_assets/Demo1.png" height="200">
+
 - Graphic UI
 - Name Search with spelling assist
 - A Robust Filter
+\
 
 <img src="./ASSETS/readme_assets/Demo2.png" height="200">
-- Radar graph
 
+- Radar graph
+\
 
 <img src="./ASSETS/readme_assets/Demo3.png" height="200">
+
 - "Guess My Name" Minigame, type "Guess My Name" in search bar to activate game
 - Trolls 😏(There's a Rick and Mahoraga hidden in the pokemon data)
-
+\
 
 <img src="./ASSETS/readme_assets/Webscrap.png" height="200">
+
 - A web scrapping script for Pokemon Pictures
+\
 
 ```python
 # POSSIBLE_OPTIONS=list(filter(lambda x:" " in x,NAME_LIST))
@@ -31,6 +32,11 @@ answer=choice(list(filter(lambda cur: cur.Name in POSSIBLE_OPTIONS,DATA)))
 ```
 *The "Guess My name" is now on a small array for troll, You can un-comment the one above for full array
 
+## Dependencies
+- Nicegui
+- Pillow
+- requests
+- pywebview
 ## [Devlog](Devlog.md)
 I document my thought process and making process of this.
 
