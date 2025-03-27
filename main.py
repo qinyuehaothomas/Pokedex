@@ -84,7 +84,7 @@ def guess_my_name():
     # POSSIBLE_OPTIONS=list(filter(lambda x:" " in x,NAME_LIST))
     POSSIBLE_OPTIONS=["Pikachu","Eight-Handled Sword Divergent Sila Divine General Mahoraga","Charizard","Meowth","Rick Ashley"]
     answer=choice(list(filter(lambda cur: cur.Name in POSSIBLE_OPTIONS,DATA)))
-    # print(answer)
+
     def check_answer(image_obj,user_answer):
         if user_answer.user_input==answer.Name:
             image_obj.set_source(answer.photo)
@@ -92,12 +92,13 @@ def guess_my_name():
         else:
             print(user_answer,answer.Name)
             ui.notify(f"No... Give it another try!")
+    
     with ui.dialog() as dialog, ui.card():
         ui.button(icon="chevron_left", on_click=dialog.close)
         image_obj=ui.image(answer.masked()).style("width:500px")
         user_answer=GMN_User()
-        ui.input(placeholder="Guess My Name!").bind_value(user_answer,"user_input")
-        ui.button(icon="login", on_click=lambda:check_answer(image_obj,user_answer))
+        ui.input(placeholder="Guess My Name!").classes("w-full").bind_value(user_answer,"user_input")
+        ui.button(icon="login", on_click=lambda:check_answer(image_obj,user_answer)).classes("ml-auto")
     dialog.open()
 
 
@@ -120,35 +121,27 @@ async def show_result(par:ui.row):
     par.clear()
     with par:
         if not RESULTS:
-            # print("lifestyle")
             ui.notify("No Pokemon satisfy these constrains!",type="negative")
             
         else:
             for pokemon in RESULTS:
-                # print(f"Loading {pokemon.Name}")
                 with ui.card().classes("justify-center w-[320px] px-[0px]"):
                     with ui.row():
-                        ui.label(pokemon.Name)
+                        ui.label(pokemon.Name).classes("text-2xl font-serif ml-2")
                         ui.chip(pokemon.Type_1,color="None")\
-                        .classes(f"bg-[{COLOUR_SHEET[pokemon.Type_1]}]")
+                        .classes(f"ml-auto bg-[{COLOUR_SHEET[pokemon.Type_1]}]")
                         if pokemon.Type_2:
                             ui.chip(pokemon.Type_2,color="None")\
-                            .classes(f"bg-[{COLOUR_SHEET[pokemon.Type_2]}]")
+                            .classes(f"ml-auto bg-[{COLOUR_SHEET[pokemon.Type_2]}]")
                         if pokemon.Legendary:
-                            ui.chip("Legendary",color="gold")
+                            ui.chip("Legendary",color="gold")\
+                            .classes("ml-auto")
                     loading_img=ui.skeleton(type="QSlider")
                     await asyncio.sleep(0.5)
                     loading_img.delete()
                     ui.image(pokemon.get_image()).style("height:300px,width:auto")
                     ui.echart(pokemon.graph())
                     
-
-def robust_int(qn: str):
-    response=input(qn)
-    while not response.isnumeric():
-        print("Please input integers!")
-        response=input(qn)
-    return int(response)
 
 def get_data(path):
     DATA=[]
@@ -170,7 +163,7 @@ if __name__ in {"__main__", "__mp_main__"}:
     # SearchPage()
     # ui.page("/search")(SEARCH.results)
     # ui.page("/")(SEARCH.build)
-    app.native.window_args['resizable'] = False
+    # app.native.window_args['resizable'] = False
     ui.run(favicon="ASSETS\\favicon.png",
            title="Pokemon Super Search Engine",
         #    native=True,

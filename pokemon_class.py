@@ -77,9 +77,8 @@ class Pokemon:
                 },
                 "label": {
                 "show": True,
-                "position":"inside",
                 "color": "#222",
-                "fontSize": 10
+                "fontSize": 12
                 }
             }]
         }
