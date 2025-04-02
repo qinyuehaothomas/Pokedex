@@ -82,7 +82,7 @@ def SearchPage():
 
 def guess_my_name():
     # POSSIBLE_OPTIONS=list(filter(lambda x:" " in x,NAME_LIST))
-    POSSIBLE_OPTIONS=["Pikachu","Eight-Handled Sword Divergent Sila Divine General Mahoraga","Charizard","Meowth","Rick Ashley"]
+    POSSIBLE_OPTIONS=["Pikachu","Eight-Handled Sword Divergent Sila Divine General Mahoraga","Charizard","Jo","Rick Ashley"]
     answer=choice(list(filter(lambda cur: cur.Name in POSSIBLE_OPTIONS,DATA)))
 
     def check_answer(image_obj,user_answer):
